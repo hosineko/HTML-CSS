@@ -1,0 +1,16 @@
+body {
+  color: #888;
+  line-height: 1.7142857143;
+  letter-spacing: 0.05em;
+}
+
+.card {
+  text-align: center;
+}
+.card .btn {
+  text-align: right;
+}
+.card .btn a {
+  text-decoration: none;
+}
+/*# sourceMappingURL=style.css.map */
