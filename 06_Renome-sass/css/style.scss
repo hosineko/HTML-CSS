@@ -8,3 +8,9 @@ $breakpoints: (
     "desktop":"screen and (min-width:800px)",
     "full":"screen and (min-width:1200px)",
     ) !default;
+
+@mixin m-query($breakpoint) {
+    @media #{map-get($breakpoints,$breakpoint)} {
+        @content;
+    }
+}
