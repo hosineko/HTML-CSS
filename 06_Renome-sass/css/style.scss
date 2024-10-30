@@ -1,1 +1,10 @@
 @charset "utf-8";
+
+$color-text: #404040;
+$color-main: #985E5B;
+
+$breakpoints: (
+    "tablet":"screen and (min-width:640px)",
+    "desktop":"screen and (min-width:800px)",
+    "full":"screen and (min-width:1200px)",
+    ) !default;
