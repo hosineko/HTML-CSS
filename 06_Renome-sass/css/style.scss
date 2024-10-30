@@ -14,3 +14,10 @@ $breakpoints: (
         @content;
     }
 }
+
+@mixin m-inner($w: 90%, $mw: 1200px) {
+    width: $w;
+    max-width: $mw;
+    margin-left: auto;
+    margin-right: auto;
+}
