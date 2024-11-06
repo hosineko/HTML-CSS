@@ -43,7 +43,7 @@ img {
   align-items: center;
   flex-direction: column;
 }
-@media screen and (min-width:800px) {
+@media screen and (min-width: 800px) {
   .footer__inner {
     flex-direction: row;
     justify-content: space-between;
@@ -54,7 +54,7 @@ img {
   font-size: 12px;
   line-height: 1.5;
 }
-@media screen and (min-width:800px) {
+@media screen and (min-width: 800px) {
   .footer__copy {
     margin-top: 0;
   }
@@ -80,6 +80,21 @@ img {
 
 .post__pic {
   margin-bottom: 30px;
+  position: relative;
+}
+.post__number {
+  display: inline-block;
+  background-color: #985E5B;
+  color: #fff;
+  position: absolute;
+  top: 10.5263157895%;
+  left: 7.8947368421%;
+  width: 13.1578947368%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .post__text {
   margin-bottom: 50px;
@@ -90,7 +105,7 @@ img {
 .post .btn {
   margin-top: auto;
 }
-@media screen and (min-width:640px) {
+@media screen and (min-width: 640px) {
   .post .btn {
     width: 100%;
   }
@@ -107,7 +122,7 @@ img {
   text-align: center;
 }
 
-@media screen and (min-width:640px) {
+@media screen and (min-width: 640px) {
   .mobile {
     display: none;
   }
@@ -135,7 +150,7 @@ img {
   font-weight: bold;
   line-height: 1.1904761905;
 }
-@media screen and (min-width:800px) {
+@media screen and (min-width: 800px) {
   .visual__title {
     font-size: 50px;
     line-height: 1.2;
@@ -153,7 +168,7 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
-@media screen and (min-width:800px) {
+@media screen and (min-width: 800px) {
   .contents__inner {
     display: flex;
     flex-wrap: wrap;
@@ -166,7 +181,7 @@ img {
 .services {
   margin-bottom: 100px;
 }
-@media screen and (min-width:800px) {
+@media screen and (min-width: 800px) {
   .services {
     width: 58.3333333333%;
   }
@@ -180,7 +195,7 @@ img {
   line-height: 1.5;
   text-transform: uppercase;
 }
-@media screen and (min-width:640px) {
+@media screen and (min-width: 640px) {
   .services__list {
     margin-bottom: -80px;
     display: flex;
@@ -192,7 +207,7 @@ img {
 .services__item {
   margin-bottom: 80px;
 }
-@media screen and (min-width:640px) {
+@media screen and (min-width: 640px) {
   .services__item {
     width: 47.1428571429%;
     display: flex;
@@ -207,7 +222,7 @@ img {
 .information {
   margin-bottom: 100px;
 }
-@media screen and (min-width:800px) {
+@media screen and (min-width: 800px) {
   .information {
     width: 33.3333333333%;
   }
@@ -245,6 +260,7 @@ img {
 
 /* about.html
 -----------------------*/
+/* concept */
 .concept {
   margin: 60px 0 100px;
   text-align: center;
@@ -256,15 +272,77 @@ img {
   margin-right: auto;
 }
 .concept__title {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto 60px;
+  padding-bottom: 15px;
+  border-bottom: 4px solid #985E5B;
   font-size: 42px;
   font-weight: bold;
   line-height: 1.1904761905;
 }
+@media screen and (min-width: 800px) {
+  .concept__title {
+    font-size: 50px;
+    line-height: 0.8333333333;
+  }
+}
 .concept__text {
+  max-width: 754px;
+  margin: 0 auto;
   font-size: 18px;
   line-height: 2;
 }
 .concept__text span {
   display: inline-block;
+}
+
+/* floor */
+.floor {
+  margin-bottom: 100px;
+}
+.floor__inner {
+  width: 90%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.floor__title {
+  margin-bottom: 40px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 800px) {
+  .floor__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-bottom: -80px;
+  }
+}
+.floor__item {
+  margin-bottom: 80px;
+}
+@media screen and (min-width: 800px) {
+  .floor__item {
+    width: 31.6666666667%;
+  }
+}
+.floor__item img {
+  width: 100%;
+  aspect-ratio: 560/315;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (min-width: 800px) {
+  .floor__item img {
+    aspect-ratio: 380/285;
+  }
 }
 /*# sourceMappingURL=style.css.map */

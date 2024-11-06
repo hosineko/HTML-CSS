@@ -1,16 +1,18 @@
+// コピペして追いつく
+
 @charset "utf-8";
 
 $color-text: #404040;
 $color-main: #985E5B;
 
 $breakpoints: (
-    "tablet":"screen and (min-width:640px)",
-    "desktop":"screen and (min-width:800px)",
-    "full":"screen and (min-width:1200px)",
+    "tablet": "screen and (min-width: 640px)",
+    "desktop": "screen and (min-width: 800px)",
+    "full": "screen and (min-width: 1200px)",
     ) !default;
 
 @mixin m-query($breakpoint) {
-    @media #{map-get($breakpoints,$breakpoint)} {
+    @media #{map-get($breakpoints, $breakpoint)} {
         @content;
     }
 }
@@ -56,7 +58,6 @@ img {
     vertical-align: bottom;
 }
 
-
 /* header */
 .header {
     padding: 40px 0;
@@ -66,7 +67,6 @@ img {
         @include m-flex();
     }
 }
-
 
 /* footer */
 .footer {
@@ -95,7 +95,6 @@ img {
     }
 }
 
-
 /* nav */
 .nav {
     &__list {
@@ -118,6 +117,23 @@ img {
 .post {
     &__pic {
         margin-bottom: 30px;
+        position: relative;
+    }
+
+    &__number {
+        display: inline-block;
+        background-color: $color-main;
+        color: #fff;
+        position: absolute;
+        top: (30/285)*100%;
+        left: (30/380)*100%;
+        width: (50/380)*100%;
+        // height: 50px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     &__text {
@@ -156,7 +172,6 @@ img {
 
 /* index.html
 -----------------------*/
-
 /* visual */
 .visual {
     margin-bottom: 100px;
@@ -264,7 +279,7 @@ img {
 
 /* about.html
 -----------------------*/
-
+/* concept */
 .concept {
     margin: 60px 0 100px;
     text-align: center;
@@ -274,12 +289,23 @@ img {
     }
 
     &__title {
+        width: fit-content;
+        margin: 0 auto 60px;
+        padding-bottom: 15px;
+        border-bottom: 4px solid $color-main;
         font-size: 42px;
         font-weight: bold;
         line-height: (50/42);
+
+        @include m-query(desktop) {
+            font-size: 50px;
+            line-height: (50/60);
+        }
     }
 
     &__text {
+        max-width: 754px;
+        margin: 0 auto;
         font-size: 18px;
         line-height: (36/18);
 
@@ -289,4 +315,40 @@ img {
     }
 }
 
-// コピペして追いつく
+/* floor */
+.floor {
+    margin-bottom: 100px;
+
+    &__inner {
+        @include m-inner();
+    }
+
+    &__title {
+        @include m-title-main();
+    }
+
+    &__list {
+        @include m-query(desktop) {
+            @include m-flex(stretch);
+            margin-bottom: -80px;
+        }
+    }
+
+    &__item {
+        margin-bottom: 80px;
+
+        @include m-query(desktop) {
+            width: (380/1200)*100%;
+        }
+
+        img {
+            width: 100%;
+            aspect-ratio: 560 / 315;
+            object-fit: cover;
+
+            @include m-query(desktop) {
+                aspect-ratio: 380 / 285;
+            }
+        }
+    }
+}
