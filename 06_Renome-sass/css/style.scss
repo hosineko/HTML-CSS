@@ -66,3 +66,31 @@ img {
         @include m-flex();
     }
 }
+
+
+/* footer */
+.footer {
+    padding: 40px 0;
+    background-color: #EDEFF2;
+
+    &__inner {
+        @include m-inner();
+        @include m-flex(center, center);
+        flex-direction: column;
+
+        @include m-query(desktop) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    &__copy {
+        margin-top: 25px;
+        font-size: 12px;
+        line-height: (18/12);
+
+        @include m-query(desktop) {
+            margin-top: 0;
+        }
+    }
+}
