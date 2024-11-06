@@ -11,4 +11,19 @@ img {
   height: auto;
   vertical-align: bottom;
 }
+
+/* header */
+.header {
+  padding: 40px 0;
+}
+.header__inner {
+  width: 90%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
 /*# sourceMappingURL=style.css.map */

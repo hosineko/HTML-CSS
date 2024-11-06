@@ -55,3 +55,14 @@ img {
     height: auto;
     vertical-align: bottom;
 }
+
+
+/* header */
+.header {
+    padding: 40px 0;
+
+    &__inner {
+        @include m-inner();
+        @include m-flex();
+    }
+}
