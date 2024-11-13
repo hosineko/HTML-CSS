@@ -1,7 +1,125 @@
-@charset 'utf-8';
+/* font-size は rem
+   margin は em の方がいいかも？ */
 
-$color-main: #244D4D;
-$color-bg: #F4F4F4;
+
+
+/*
+フォントサイズ：「親要素のフォントサイズ」の相対値（何倍か）
+横幅や余白：「自分自身のフォントサイズ」の相対値（何倍か）
+
+指定したいフォントサイズ(px) / 親要素のフォントサイズ(px)=em
+*/
+
+// 【Sassの記法】
+// body {
+//     font-size: (14/16)+em;
+// }
+
+/* もしくは */
+
+// body {
+//     font-size: (14em/16);
+// }
+
+
+// cssだと(計算して書くと)
+
+/* 親要素(html)のフォントサイズは16px（ブラウザのディフォルト） */
+
+// body {
+//     font-size: .875em;
+
+/* 14/16 = 0.875 */
+
+// }
+
+
+/* 親要素(body)のフォントサイズは14px */
+// h1 {
+//     font-size: 2.57em;
+
+/* 36/14 = 2.57... */
+
+// }
+
+
+/* 親要素(h1)のフォントサイズは36px */
+// span {
+//     font-size: .33em;
+
+/*   12/36 = 0.33... */
+
+// }
+
+
+
+/*
+フォントサイズ：「ルート要素(html要素)のフォントサイズ」の相対値（何倍か）
+横幅や余白：「ルート要素(html要素)のフォントサイズ」の相対値（何倍か）
+*/
+
+/*
+指定したいフォントサイズ(px) / ルート要素(html要素)のフォントサイズ(px)=rem
+*/
+
+/* ルート要素(html)のフォントサイズは16px（ブラウザのディフォルト） */
+
+// body {
+//     font-size: .875rem;
+
+/* 14/16 = 0.875 */
+
+// }
+
+
+// h1 {
+//     font-size: 2.25rem;
+
+/* 36/16 = 2.25... */
+
+// }
+
+
+// span {
+//     font-size: .75em;
+
+/* 12/16 = 0.75... */
+
+// }
+
+
+
+/*
+em だとあまり意味がない？らしい。
+*/
+
+/*
+「@function」で関数化
+引数で数字を渡し、計算した結果を呼び出し元に返す
+*/
+
+/*
+@function f-rem($value) {
+    @return ($value/16)+rem;
+}
+
+body {
+    font-size: f-rem(14);
+}
+
+h1 {
+    font-size: f-rem(36);
+}
+*/
+
+
+
+
+
+@charset "utf-8";
+
+$color-main: #244d4d;
+$color-bg: #f4f4f4;
 
 $breakpoints: (
     "desktop": "screen and (min-width: 740px)",
@@ -27,17 +145,34 @@ $breakpoints: (
     align-items: $a;
 }
 
+@function f-rem($value) {
+    @return ($value/16)+rem;
+}
+
+@function f-em($myvalue, $value) {
+    @return ($myvalue/$value)+em;
+}
+
 /* base
 ----------------------*/
+// html {
+//   font-size: (12em/16);
+
+//   @include m-query() {
+//     font-size: (16em/16);
+//   }
+// }
+
 body {
     color: $color-main;
-    font-family: 'Gill Sans',
-        'Gill Sans MT',
-        Calibri,
-        'Trebuchet MS',
-        sans-serif;
-    line-height: (27/16
+    font-size: f-rem(16
     );
+font-family: 'Gill Sans',
+    'Gill Sans MT',
+    Calibri,
+    'Trebuchet MS',
+    sans-serif;
+line-height: (27/16);
 letter-spacing: 0;
 }
 
@@ -50,14 +185,34 @@ img {
 /* header */
 .header {
     padding: (40em/16) 0;
-    background-color: #ddd;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
 
     &__inner {
         @include m-inner();
+        @include m-flex();
     }
 
     &__logo {
-        font-size: (26em/16);
+        font-size: f-rem(26);
         font-weight: bold;
+    }
+}
+
+/* nav */
+.nav {
+    &__list {
+        @include m-flex();
+    }
+
+    &__item {
+        margin-left: (30em/16);
+    }
+
+    &__active {
+        text-decoration: underline;
     }
 }

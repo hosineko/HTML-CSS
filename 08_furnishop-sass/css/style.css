@@ -1,7 +1,55 @@
+@charset "UTF-8";
+/* font-size は rem
+   margin は em の方がいいかも？ */
+/*
+フォントサイズ：「親要素のフォントサイズ」の相対値（何倍か）
+横幅や余白：「自分自身のフォントサイズ」の相対値（何倍か）
+
+指定したいフォントサイズ(px) / 親要素のフォントサイズ(px)=em
+*/
+/* もしくは */
+/* 親要素(html)のフォントサイズは16px（ブラウザのディフォルト） */
+/* 14/16 = 0.875 */
+/* 親要素(body)のフォントサイズは14px */
+/* 36/14 = 2.57... */
+/* 親要素(h1)のフォントサイズは36px */
+/*   12/36 = 0.33... */
+/*
+フォントサイズ：「ルート要素(html要素)のフォントサイズ」の相対値（何倍か）
+横幅や余白：「ルート要素(html要素)のフォントサイズ」の相対値（何倍か）
+*/
+/*
+指定したいフォントサイズ(px) / ルート要素(html要素)のフォントサイズ(px)=rem
+*/
+/* ルート要素(html)のフォントサイズは16px（ブラウザのディフォルト） */
+/* 14/16 = 0.875 */
+/* 36/16 = 2.25... */
+/* 12/16 = 0.75... */
+/*
+em だとあまり意味がない？らしい。
+*/
+/*
+「@function」で関数化
+引数で数字を渡し、計算した結果を呼び出し元に返す
+*/
+/*
+@function f-rem($value) {
+    @return ($value/16)+rem;
+}
+
+body {
+    font-size: f-rem(14);
+}
+
+h1 {
+    font-size: f-rem(36);
+}
+*/
 /* base
 ----------------------*/
 body {
-  color: #244D4D;
+  color: #244d4d;
+  font-size: 1rem;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   line-height: 1.6875;
   letter-spacing: 0;
@@ -16,16 +64,38 @@ img {
 /* header */
 .header {
   padding: 2.5em 0;
-  background-color: #ddd;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
 }
 .header__inner {
   width: 86.4864864865%;
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 .header__logo {
-  font-size: 1.625em;
+  font-size: 1.625rem;
   font-weight: bold;
+}
+
+/* nav */
+.nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__item {
+  margin-left: 1.875em;
+}
+.nav__active {
+  text-decoration: underline;
 }
 /*# sourceMappingURL=style.css.map */
