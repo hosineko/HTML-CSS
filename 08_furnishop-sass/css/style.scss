@@ -26,3 +26,23 @@ $breakpoints: (
     justify-content: $j;
     align-items: $a;
 }
+
+/* base
+----------------------*/
+body {
+    color: $color-main;
+    font-family: 'Gill Sans',
+        'Gill Sans MT',
+        Calibri,
+        'Trebuchet MS',
+        sans-serif;
+    line-height: (27/16
+    );
+letter-spacing: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
