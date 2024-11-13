@@ -12,4 +12,20 @@ img {
   height: auto;
   vertical-align: bottom;
 }
+
+/* header */
+.header {
+  padding: 2.5em 0;
+  background-color: #ddd;
+}
+.header__inner {
+  width: 86.4864864865%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.header__logo {
+  font-size: 1.625em;
+  font-weight: bold;
+}
 /*# sourceMappingURL=style.css.map */
