@@ -216,3 +216,27 @@ img {
         text-decoration: underline;
     }
 }
+
+/* index.html
+----------------------*/
+/* visual */
+.visual {
+    padding: (250em/16) 0 (140em/16);
+    background: url(../images/bg_hero.png) no-repeat center bottom / cover;
+
+    &__inner {
+        @include m-inner();
+    }
+
+    &__text {
+        max-width: (480em/16);
+        padding: (65em/16) (60em/16);
+        background-color: rgba(255, 255, 255, .6);
+
+        p {
+            font-size: f-rem(48);
+            font-weight: bold;
+            line-height: (58/48);
+        }
+    }
+}
